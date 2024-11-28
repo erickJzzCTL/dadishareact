@@ -1,0 +1,74 @@
+.section-dark .slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+.custom-pointer {
+  cursor: pointer;
+}
+.h-fit {
+  height: fit-content;
+}
+.w-fit {
+  width: fit-content;
+}
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* WebKit (Chrome, Safari) */
+}
+
+.h-20t {
+  height: 5rem;
+}
+
+.w-20t {
+  width: 5rem;
+}
+
+.prd-top {
+  margin-top: 10%;
+}
+@media (max-width: 576px) {
+  .prd-top {
+    margin-top: 28%;
+  }
+}
