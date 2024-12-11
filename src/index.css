@@ -56,6 +56,10 @@
   display: none; /* WebKit (Chrome, Safari) */
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .h-20t {
   height: 5rem;
 }
@@ -64,9 +68,27 @@
   width: 5rem;
 }
 
+.rounded-full {
+  border-radius: 50%;
+}
 .prd-top {
   margin-top: 10%;
 }
+.swiper-slide {
+  background-color: transparent !important;
+}
+.bottom-60p {
+  bottom: 60px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fbae24 !important;
+}
+
+.text-primary {
+  color: #fbae24 !important;
+}
+
 @media (max-width: 576px) {
   .prd-top {
     margin-top: 28%;

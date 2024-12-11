@@ -1,0 +1,39 @@
+.cart-count {
+  right: 2px;
+}
+
+.cart-count .content {
+  background-color: red;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body .buttons-container {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-body:hover .buttons-container {
+  opacity: 1;
+}
+
+/* .card-body .buttons-container {
+    display: none !important;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card-body:hover .buttons-container {
+    display: flex !important;
+  } */
+
+.hover-zoom {
+  transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.1);
+}

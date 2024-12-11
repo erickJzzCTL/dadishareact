@@ -3,7 +3,15 @@ import Header from '../../components/Header';
 import AboutSectionFive from '../about/AboutSectionFive';
 import HomeSectionEight from '../home/HomeSectionEight';
 import { Fade, Slide } from 'react-awesome-reveal';
-import { CiHeart } from 'react-icons/ci';
+import { FaHeart } from 'react-icons/fa';
+import { IoCartOutline } from 'react-icons/io5';
+import { IoIosArrowForward } from 'react-icons/io';
+import { FaTruckFast } from 'react-icons/fa6';
+import { IoReload } from 'react-icons/io5';
+import { FaShield } from 'react-icons/fa6';
+import { GiRabbit } from 'react-icons/gi';
+import { IoMdHeadset } from 'react-icons/io';
+import { FiSearch } from 'react-icons/fi';
 import { Rate } from 'antd';
 import CategorySlider from './category/CategorySlider';
 import BannerSlider from './banner/BannerSlider';
@@ -14,57 +22,64 @@ import 'swiper/css';
 
 // import required modules
 import { FreeMode, Mousewheel } from 'swiper/modules';
+import BottomBanner from './banner/BottomBanner';
+import { color } from 'framer-motion';
+import TrendingSerach from './TrendingSerach';
+
+import ProductFooter from './ProductFooter';
+import FirstProductSlider from './FirstProductSlider';
+import SecondProductSlider from './SecondProductSlider';
 
 const productArray = [
   {
     id: 1,
-    name: 'Product 1',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description: 'Description of Product 1',
-    image: '/tempimg/p1.jpg',
+    images: ['/tempimg/p1.jpg', '/tempimg/p2.jpg', '/tempimg/p3.jpg'],
     rating: 0.5,
   },
   {
     id: 2,
-    name: 'Product 2',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description:
       'Description of Product 2 hiscdjjncsdkjkmsknjknjsdjknkjnsdkjn adsjjhjas',
-    image: '/tempimg/p2.jpg',
+    images: ['/tempimg/p2.jpg', '/tempimg/p1.jpg', '/tempimg/p3.jpg'],
     rating: 5,
   },
   {
     id: 3,
-    name: 'Product 3',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description: 'Description of Product 3',
-    image: '/tempimg/p3.jpg',
+    images: ['/tempimg/p3.jpg', '/tempimg/p2.jpg', '/tempimg/p1.jpg'],
     rating: 2.5,
   },
   {
     id: 4,
-    name: 'Product 3',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description: 'Description of Product 3',
-    image: '/tempimg/p4.jpg',
+    images: ['/tempimg/p4.jpg', '/tempimg/p5.jpg', '/tempimg/p1.jpg'],
     rating: 4.5,
   },
   {
     id: 5,
-    name: 'Product 3',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description: 'Description of Product 3',
-    image: '/tempimg/p5.jpg',
+    images: ['/tempimg/p5.jpg', '/tempimg/p2.jpg', '/tempimg/p3.jpg'],
     rating: 2.5,
   },
   {
     id: 6,
-    name: 'Product 6',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description: 'Description of Product 3',
-    image: '/tempimg/p6.jpg',
+    images: ['/tempimg/p6.jpg', '/tempimg/p4.jpg', '/tempimg/p3.jpg'],
     rating: 0.5,
   },
 
   {
     id: 5,
-    name: 'Product 7',
+    name: 'Air Purifier with True HEPA H14 Filter',
     description: 'Description of Product 7',
-    image: '/tempimg/p7.jpg',
+    images: ['/tempimg/p7.jpg', '/tempimg/p5.jpg', '/tempimg/p6.jpg'],
     rating: 1.5,
   },
 ];
@@ -133,109 +148,105 @@ export default function Product() {
       <Header />
 
       <div className="container mx-auto  prd-top">
-        <input
-          className="mb-3  rounded border-black text-back"
-          placeholder="search the product here"
-        />
+        <div className="d-flex gap-2">
+          <div className="position-relative w-full rounded overflow-hidden">
+            <input
+              className="  rounded border-[#F3F4F6] text-back  overflow-hidden"
+              placeholder="Search for products, categories or brands..."
+            />
+            <div
+              className="position-absolute end-0 top-0   px-4  py-2 h-full custom-pointer"
+              style={{ backgroundColor: '#FFA500' }}
+            >
+              <div className="d-flex justify-content-center align-items-center h-full">
+                <FiSearch className="text-white fs-5  " />
+              </div>
+            </div>
+          </div>
+        </div>
         <CategorySlider />
-        <BannerSlider />
-
-        <div className="mt-4 rounded mb-4">
-          <h5 className="text-black">New Arrival</h5>
-          <Swiper
-            spaceBetween={16}
-            slidesPerView={1}
-            breakpoints={{
-              // when window width is >= 320px
-              320: {
-                slidesPerView: 1.5,
-                spaceBetween: 10,
-              },
-              // when window width is >= 480px
-              480: {
-                slidesPerView: 1.5,
-                spaceBetween: 10,
-              },
-              // when window width is >= 768px
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
-              // when window width is >= 1024px
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-            }}
-            modules={[FreeMode, Mousewheel]}
-            mousewheel={{
-              // Enable and configure the mousewheel
-              forceToAxis: true, // Scrolls only in the horizontal direction
-              sensitivity: 1, // Adjust the sensitivity of scrolling
-            }}
-            freeMode={true}
-          >
-            {productArray.map(item => (
-              <SwiperSlide key={item.id}>
-                <div className="card">
-                  <div className="">
-                    <img
-                      src={item.image}
-                      className="card-img-top w-full h-full object-cover"
-                      alt="..."
-                    />
-                  </div>
-                  <div className="card-body">
-                    <h5 className="mb-0" style={{ fontSize: '18px' }}>
-                      {item.name}
-                    </h5>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p
-                        className="mb-0 "
-                        style={{ fontSize: '20px', color: '#6f7071' }}
-                      >
-                        {' '}
-                        29 $
-                      </p>
-                      <Rate
-                        allowHalf
-                        disabled
-                        defaultValue={item.rating}
-                        className="text-base-color"
-                      />
-                    </div>
-                    <p
-                      className="text-ellipsis line-clamp-2"
-                      style={{
-                        minHeight: '40px',
-                        fontSize: '12px',
-                        lineHeight: '20px',
-                      }}
-                    >
-                      {item.description}
-                    </p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <button
-                        className=" text-dark-gray rounded fw-700 bg-white border-1 px-1 py-1  h-30px w-30px d-flex justify-content-between align-items-center"
-                        style={{ fontSize: '12px' }}
-                      >
-                        <CiHeart style={{ fontSize: '20px' }} />
-                      </button>
-                      <button
-                        className=" text-white border-radius-30px fw-700 bg-black border-none px-4  h-fit "
-                        style={{ fontSize: '12px' }}
-                      >
-                        Buy Now
-                      </button>
-                    </div>
-                  </div>
+        {/* ---------------------banner slider------------------- */}
+        <div className="row">
+          <div className="col-8">
+            <BannerSlider />
+          </div>
+          <div className="col-4">
+            <div
+              className="w-100 overflow-hidden rounded-xl position-relative"
+              style={{ height: '340px' }}
+            >
+              <img
+                src="/tempimg/banneside1.png"
+                alt="p1"
+                className="w-100 h-100 object-cover"
+              />
+              <div className="position-absolute bottom-0 w-100">
+                <div className="d-flex justify-content-center align-items-center mb-4">
+                  <button className="bg-white text-black rounded-xl px-4 py-1 border-none fs-6">
+                    Discover Now
+                  </button>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              </div>
+            </div>
+          </div>
+          <BottomBanner />
+        </div>
+        {/* ---------------------banner slider------------------- */}
+
+        <SecondProductSlider productArray={productArray} />
+        <TrendingSerach />
+        <div className="mt-6 rounded mb-4" style={{ marginTop: '10rem' }}>
+          <div className="d-flex justify-content-between align-items-center">
+            <h5 className="text-black fw-700">QHSE Sign Boards</h5>
+            <a className="d-flex align-items-center gap-2">
+              View All <IoIosArrowForward />
+            </a>
+          </div>
+          <FirstProductSlider productArray={productArray} />
+        </div>
+
+        <div
+          className="rounded-xl px-4 py-3 text-white mb-4"
+          style={{ backgroundColor: '#F6AB4A', fontSize: '14px' }}
+        >
+          <div className="d-flex flex-wrap justify-content-between">
+            <div className="d-flex justify-content-between align-items-center gap-2">
+              <FaTruckFast />
+              <p className="text-uppercase mb-0"> free shipping over $199</p>
+            </div>
+            <div className="d-flex justify-content-between align-items-center gap-2">
+              <IoReload />
+              <p className="text-uppercase mb-0"> 30 days money back</p>
+            </div>
+            <div className="d-flex justify-content-between align-items-center gap-2">
+              <FaShield />
+              <p className="text-uppercase mb-0"> 100% secure payment</p>
+            </div>
+            <div className="d-flex justify-content-between align-items-center gap-2">
+              <GiRabbit />
+              <p className="text-uppercase mb-0"> free product return</p>
+            </div>
+            <div className="d-flex justify-content-between align-items-center gap-2">
+              <IoMdHeadset />
+              <p className="text-uppercase mb-0">
+                {' '}
+                24/7 online & offline support
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded mb-4" style={{ marginTop: '10rem' }}>
+          <div className="d-flex justify-content-between align-items-center">
+            <h5 className="text-black fw-700">Recently viewed products</h5>
+            <a className="d-flex align-items-center gap-2">
+              View All <IoIosArrowForward />
+            </a>
+          </div>
+          <FirstProductSlider productArray={productArray} />
         </div>
       </div>
-      <HomeSectionEight />
+      <ProductFooter />
     </div>
   );
 }

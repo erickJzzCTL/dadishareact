@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Services from './pages/services/Services';
@@ -8,11 +8,23 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Product from './pages/products/Product';
+import CategoryFilter from './pages/category/CategoryFilter';
 
 function App() {
   const [count, setCount] = useState(0);
   const [scrollProgressVisible, setScrollProgressVisible] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  const location = useLocation();
+  const [backgroundImage, setBackgroundImage] = useState('');
+
+  useEffect(() => {
+    if (location.pathname === '/products' || location.pathname === '/categoryfilter') {
+      setBackgroundImage(''); // Remove background image
+    } else {
+      setBackgroundImage('url(images/vertical-line-bg-small-medium-gray.svg)');
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +54,14 @@ function App() {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: backgroundImage,
+        backgroundPosition: 'center top',
+        backgroundRepeat: 'repeat',
+        minHeight: '100vh',
+      }}
+    >
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -50,6 +69,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/products" element={<Product />} />
+        <Route path="/categoryfilter" element={<CategoryFilter />} />
       </Routes>
       <div
         className={`scroll-progress d-none d-xxl-block ${
@@ -71,7 +91,7 @@ function App() {
           </span>
         </a>
       </div>
-    </>
+    </div>
   );
 }
 

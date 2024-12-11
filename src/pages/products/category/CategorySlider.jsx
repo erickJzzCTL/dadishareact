@@ -1,22 +1,63 @@
 import { useState, useEffect } from 'react';
 // import { Spin } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const categories = [
-  { id: 1, image: '/tempimg/p1.jpg', name: 'most popular' },
-  { id: 1, image: '/tempimg/p2.jpg', name: 'most popular' },
-  { id: 2, image: '/tempimg/p3.jpg', name: 'most popular' },
-  { id: 3, image: '/tempimg/p4.jpg', name: 'most popular' },
-  { id: 4, image: '/tempimg/p5.jpg', name: 'most popular' },
-  { id: 5, image: '/tempimg/p6.jpg', name: 'most popular' },
-  { id: 6, image: '/tempimg/p7.jpg', name: 'most popular' },
-  { id: 7, image: '/tempimg/p1.jpg', name: 'most popular' },
-  { id: 8, image: '/tempimg/p1.jpg', name: 'most popular' },
-  { id: 9, image: '/tempimg/p1.jpg', name: 'most popular' },
-  { id: 10, image: '/tempimg/p1.jpg', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+  { id: 1, image: '/tempimg/cat1.png', name: 'most popular' },
+];
+
+const items = [
+  {
+    key: '1',
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.antgroup.com"
+      >
+        1st menu item
+      </a>
+    ),
+  },
+  {
+    key: '2',
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.aliyun.com"
+      >
+        2nd menu item
+      </a>
+    ),
+  },
+  {
+    key: '3',
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.luohanacademy.com"
+      >
+        3rd menu item
+      </a>
+    ),
+  },
 ];
 
 const CategorySlider = () => {
+  const navigate = useNavigate();
   // -------------------start setup loading-----------------------
   const [loading, setLoading] = useState(false);
   const contentStyle = {
@@ -49,12 +90,20 @@ const CategorySlider = () => {
             return (
               <div className="d-flex flex-column" key={item.id}>
                 <div
-                  className="h-20t w-20t overflow-hidden rounded-full mx-4 cursor-pointer  "
-                  style={{ borderRadius: '50%' }}
+                  className="h-20t w-20t overflow-hidden rounded-full mx-4 custom-pointer grid place-items-center d-flex justify-content-center align-items-center "
+                  style={{ borderRadius: '50%', backgroundColor: '#E3E3EC' }}
+                  onClick={() => {
+                    navigate('/categoryfilter');
+                  }}
                 >
                   <img
                     src={item.image}
-                    className="h-full w-full object-cover"
+                    className=""
+                    style={{
+                      width: '50px',
+                      height: '50px',
+                      objectFit: 'contain',
+                    }}
                   />
                 </div>
 

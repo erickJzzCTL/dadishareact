@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Fade, Slide } from 'react-awesome-reveal';
+import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Space } from 'antd';
+import { FiUser } from 'react-icons/fi';
+import { FiShoppingCart } from 'react-icons/fi';
 
 export default function Header() {
   const navigate = useNavigate();
   const [openNav, setOpenNav] = React.useState(false);
+  const items = [
+    {
+      label: 'USD',
+      key: '0',
+    },
+    {
+      label: 'INR',
+      key: '1',
+    },
+  ];
+
+  const [selectedItem, setSelectedItem] = useState(items[0]);
+
+  const handleMenuClick = ({ key }) => {
+    const selected = items.find(item => item.key === key);
+    setSelectedItem(selected);
+  };
+
+  const menu = {
+    items,
+    onClick: handleMenuClick,
+  };
 
   return (
     <header>
@@ -36,7 +62,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="col-auto col-lg-8 menu-order position-static">
+          <div className="col-auto col-lg-6 menu-order position-static">
             <button
               className="navbar-toggler float-start"
               type="button"
@@ -79,7 +105,7 @@ export default function Header() {
                 </li>
                 <li className="nav-item custom-pointer cursor-pointer">
                   <a href="/products" className="nav-link">
-                    Products
+                    Dadisha Store
                   </a>
                 </li>
                 <li className="nav-item cursor-pointer">
@@ -87,11 +113,24 @@ export default function Header() {
                     Contact
                   </a>
                 </li>
+                {/* <li className="nav-item cursor-pointer">
+                  <a href="/contactus" className="nav-link">
+                    Login
+                  </a>
+                </li>
+                <li className="position-relative nav-item cursor-pointer relative">
+                  <a href="/contactus" className="nav-link">
+                    Cart
+                  </a>
+                  <div className="position-absolute  bottom-60p cart-count">
+                    <div className="rounded-full text-white content">2</div>
+                  </div>
+                </li> */}
               </ul>
             </div>
           </div>
-          <div className="col-auto col-lg-2 text-end">
-            <div className="header-icon">
+          <div className="col-auto col-lg-4 text-end d-flex gap-4 justify-content-center align-items-center">
+            {/* <div className="header-icon">
               <div className="header-button">
                 <a
                   href="whatsapp://send?phone=+971522209890"
@@ -107,6 +146,34 @@ export default function Header() {
                   </span>
                 </a>
               </div>
+            </div> */}
+
+            <div className="d-flex justify-content-center align-items-center custom-pointer">
+              <Dropdown menu={menu} trigger={['click']}>
+                <a onClick={e => e.preventDefault()}>
+                  <Space
+                    className="fw-600 text-black px-0"
+                    style={{ fontSize: '18px' }}
+                  >
+                    {selectedItem ? selectedItem.label : 'Select an item'}
+                    <DownOutlined />
+                  </Space>
+                </a>
+              </Dropdown>
+            </div>
+            <div
+              className="d-flex gap-2 align-items-center fw-600 text-black custom-pointer"
+              style={{ fontSize: '18px' }}
+            >
+              <FiUser style={{ color: '#FFA500' }} />
+              Sign In
+            </div>
+            <div
+              className="d-flex gap-2 align-items-center fw-600 text-black custom-pointer"
+              style={{ fontSize: '18px' }}
+            >
+              <FiShoppingCart style={{ color: '#FFA500' }} />
+              Cart
             </div>
           </div>
         </div>
@@ -154,6 +221,19 @@ export default function Header() {
                     <a href="/contactus" className="nav-link">
                       Contact
                     </a>
+                  </li>
+                  <li className="nav-item cursor-pointer">
+                    <a href="/contactus" className="nav-link">
+                      Login
+                    </a>
+                  </li>
+                  <li className=" nav-item cursor-pointer d-flex">
+                    <a href="/contactus" className="nav-link">
+                      Cart
+                    </a>
+                    <div className=" cart-count">
+                      <div className="rounded-full text-white content">2</div>
+                    </div>
                   </li>
                 </ul>
               </Slide>

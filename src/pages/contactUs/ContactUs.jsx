@@ -133,7 +133,7 @@ export default function ContactUs() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 offset-lg-1 contact-form-style-03">
+            <div className="col-lg-6 offset-lg-1 contact-form-style-03">
               <Slide direction="right" duration={800} delay={200}>
                 <h6 className="fw-500 text-dark-gray mb-20px sm-mb-10px ls-minus-05px">
                   <span className="fw-700">Hello,</span> Connect with us.

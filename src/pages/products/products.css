@@ -1,0 +1,14 @@
+/* .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  transform: translateX(0%) !important;
+} */
+
+.custom-button {
+  background-color: white;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.custom-button:hover {
+  color: white;
+  background-color: #ffa500; /* Change background color to yellow on hover */
+}
