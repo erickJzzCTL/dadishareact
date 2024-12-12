@@ -1,0 +1,89 @@
+.zoom-container {
+  display: none;
+}
+.zoom-container:hover {
+  display: block;
+}
+/* Custom Navigation Buttons */
+.swiper-nav-btns {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+.swiper-nav-btns button {
+  width: 40px; /* Adjust the width and height to make the button rounded */
+  height: 40px;
+  border-radius: 50%; /* Make the button rounded */
+  background-color: #fbae24; /* Background color with opacity */
+  color: white; /* Arrow color */
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: #000; /* Adjust color as needed */
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 1;
+}
+
+.details .pname {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.detailprice {
+  font-size: 35px;
+  font-weight: 700;
+}
+.p-inputnumber-input {
+  text-align: center;
+  padding: 5px 10px;
+}
+.p-inputnumber-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.detailbtn-sec {
+  border: 1px solid #ffa500;
+  color: #ffa500;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailbtn-sec:hover {
+  background-color: #ffa500;
+  color: white;
+  border-color: #ffa500;
+}
+
+.detailbtn-pri {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailbtn-pri:hover {
+  background-color: white;
+  color: #ffa500;
+  border: 1px solid #ffa500;
+}
+
+.tab-switcher button {
+  padding: 6px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.tab-switcher button.active {
+  border-bottom: 2px solid black;
+}

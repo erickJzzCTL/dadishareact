@@ -35,7 +35,7 @@ export default function HomeSectionFour() {
           </div>
           {/* end process step item */}
           {/* start process step item */}
-          <div className="col process-step-style-10 ps-5 pe-5 pt-3 pb-3 sm-mb-20px position-relative mt-40px md-mt-0 hover-box">
+          <div className="col process-step-style-10 ps-5 pe-5 mt-3 pb-3 sm-mb-20px position-relative  md-mt-0 hover-box">
             <div className="process-step-icon-box position-absolute top-minus-15px left-25px md-left-0px">
               {/* <div className="number d-inline-block fs-90 fw-700 text-outline text-outline-color-extra-medium-gray">
                 02

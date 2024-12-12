@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Product from './pages/products/Product';
 import CategoryFilter from './pages/category/CategoryFilter';
+import ProductDetails from './pages/products/productDetail/ProductDetails';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,7 +20,10 @@ function App() {
   const [backgroundImage, setBackgroundImage] = useState('');
 
   useEffect(() => {
-    if (location.pathname === '/products' || location.pathname === '/categoryfilter') {
+    if (
+      location.pathname === '/products' ||
+      location.pathname === '/categoryfilter'
+    ) {
       setBackgroundImage(''); // Remove background image
     } else {
       setBackgroundImage('url(images/vertical-line-bg-small-medium-gray.svg)');
@@ -69,6 +73,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/products" element={<Product />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
+
         <Route path="/categoryfilter" element={<CategoryFilter />} />
       </Routes>
       <div

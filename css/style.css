@@ -3718,6 +3718,7 @@ textarea:focus,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .scroll-progress .scroll-line {

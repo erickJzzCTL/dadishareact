@@ -37,26 +37,26 @@ export default function Header() {
       {/* start navigation */}
       <nav className="navbar navbar-expand-lg header-light header-transparent bg-transparent disable-fixed relative">
         <div className="container-fluid">
-          <div className="col-auto col-lg-2 me-lg-0 me-auto">
+          <div className="col-auto col-lg-3 me-lg-0 me-auto">
             <a
               className="navbar-brand custom-pointer"
               onClick={() => navigate('/')}
             >
               <img
-                src="images/assets/logo_50.png"
-                data-at2x="images/assets/logo_112.png"
+                src="/images/assets/logo_50.png"
+                data-at2x="/images/assets/logo_112.png"
                 alt=""
                 className="default-logo"
               />
               <img
-                src="images/assets/logo_50.png"
-                data-at2x="images/assets/logo_112.png"
+                src="/images/assets/logo_50.png"
+                data-at2x="/images/assets/logo_112.png"
                 alt=""
                 className="alt-logo"
               />
               <img
-                src="images/assets/logo_50.png"
-                data-at2x="images/assets/logo_112.png"
+                src="/images/assets/logo_50.png"
+                data-at2x="/images/assets/logo_112.png"
                 alt=""
                 className="mobile-logo"
               />
@@ -81,7 +81,10 @@ export default function Header() {
               className="collapse navbar-collapse justify-content-center"
               id="navbarNav"
             >
-              <ul className="navbar-nav">
+              <ul
+                className="navbar-nav d-flex justify-content-between w-100"
+                style={{ padding: '0 8%' }}
+              >
                 <li className="nav-item">
                   <a
                     className="nav-link custom-pointer"
@@ -129,7 +132,7 @@ export default function Header() {
               </ul>
             </div>
           </div>
-          <div className="col-auto col-lg-4 text-end d-flex gap-4 justify-content-center align-items-center">
+          <div className="col-auto col-lg-3 text-end d-flex gap-4 justify-content-center align-items-center">
             {/* <div className="header-icon">
               <div className="header-button">
                 <a
@@ -150,7 +153,10 @@ export default function Header() {
 
             <div className="d-flex justify-content-center align-items-center custom-pointer">
               <Dropdown menu={menu} trigger={['click']}>
-                <a onClick={e => e.preventDefault()}>
+                <a
+                  onClick={e => e.preventDefault()}
+                  style={{ textDecoration: 'none' }}
+                >
                   <Space
                     className="fw-600 text-black px-0"
                     style={{ fontSize: '18px' }}

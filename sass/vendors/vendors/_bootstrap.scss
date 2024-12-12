@@ -7557,7 +7557,7 @@ textarea.form-control-lg {
 
 .border-primary {
     --bs-border-opacity: 1;
-    border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity)) !important;
+    border-color:#ffbd1f !important;
 }
 
 .border-secondary {
@@ -8512,10 +8512,6 @@ textarea.form-control-lg {
 }
 
 /* rtl:end:remove */
-.text-primary {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
-}
 
 .text-secondary {
     --bs-text-opacity: 1;

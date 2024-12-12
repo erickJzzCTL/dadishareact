@@ -5,13 +5,18 @@ import { IoCartOutline } from 'react-icons/io5';
 import { IoIosArrowForward } from 'react-icons/io';
 import ProductCardImageSlider from './ProductCardImageSlider';
 import './products.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function SecondProductSlider({ productArray }) {
+  const navigate = useNavigate();
   return (
     <div className="rounded-xl p-2 mt-4" style={{ backgroundColor: '#EBEEF6' }}>
       <div className="d-flex justify-content-between align-items-center">
         <h5 className="text-black fw-700 my-4">Best Weekly Deals</h5>
-        <a className="d-flex align-items-center gap-2">
+        <a
+          className="d-flex align-items-center gap-2 text-black custom-pointer"
+          style={{ textDecoration: 'none' }}
+        >
           View All <IoIosArrowForward />
         </a>
       </div>
@@ -19,7 +24,10 @@ export default function SecondProductSlider({ productArray }) {
         {productArray.map((item, index) => (
           <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
             <div className="card rounded-xl overflow-hidden">
-              <div className="position-relative overflow-hidden">
+              <div
+                className="position-relative overflow-hidden custom-pointer"
+                onClick={() => navigate(`/productdetails/`)}
+              >
                 <ProductCardImageSlider images={item.images} />
                 <div className="position-absolute top-0 w-full">
                   <div className="d-flex justify-content-between align-items-center">

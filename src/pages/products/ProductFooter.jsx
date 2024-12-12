@@ -29,23 +29,23 @@ export default function ProductFooter() {
       <div className="rounded-xl px-4 py-3" style={{ fontSize: '14px' }}>
         <div className="d-flex flex-wrap justify-content-between">
           <div className="d-flex justify-content-between align-items-center gap-2">
-            <FaTruckFast className="text-primary" />
+            <FaTruckFast className="textprimary" />
             <p className="text-uppercase mb-0"> free shipping over $199</p>
           </div>
           <div className="d-flex justify-content-between align-items-center gap-2">
-            <IoReload className="text-primary" />
+            <IoReload className="textprimary" />
             <p className="text-uppercase mb-0"> 30 days money back</p>
           </div>
           <div className="d-flex justify-content-between align-items-center gap-2">
-            <FaShield className="text-primary" />
+            <FaShield className="textprimary" />
             <p className="text-uppercase mb-0"> 100% secure payment</p>
           </div>
           <div className="d-flex justify-content-between align-items-center gap-2">
-            <GiRabbit className="text-primary" />
+            <GiRabbit className="textprimary" />
             <p className="text-uppercase mb-0"> free product return</p>
           </div>
           <div className="d-flex justify-content-between align-items-center gap-2">
-            <IoMdHeadset className="text-primary" />
+            <IoMdHeadset className="textprimary" />
             <p className="text-uppercase mb-0">
               {' '}
               24/7 online & offline support
@@ -57,9 +57,7 @@ export default function ProductFooter() {
       <div className="container mt-2">
         <div className="row">
           <div class="col-12 col-sm-2 col-md-3 ">
-            <h1 className="fw-bold fs-6 text-black mb-0">
-              Dadisha Private limited
-            </h1>
+            <h1 className="fw-bold fs-6 text-black mt-4">Dadisha Private limited</h1>
             <div className="d-flex flex-column gap-2 ">
               <p className="mb-0">About Us</p>
               <p className="mb-0">Privacy Policy</p>
@@ -110,9 +108,7 @@ export default function ProductFooter() {
             </div>
           </div>
           <div class="col-12 col-sm-2 col-md-3 ">
-            <h1 className="fw-bold fs-6 text-black mb-0">
-              Your Account & Orders
-            </h1>
+            <h1 className="fw-bold fs-6 text-black mt-4 ">Your Account & Orders</h1>
             <div className="d-flex flex-column gap-2 ">
               <p className="mb-0">Your Account</p>
               <p className="mb-0">Shopping Cart</p>
@@ -120,7 +116,7 @@ export default function ProductFooter() {
             </div>
           </div>
           <div class="col-12 col-sm-2 col-md-3 ">
-            <h1 className="fw-bold fs-6 text-black mb-0">Resources</h1>
+            <h1 className="fw-bold fs-6 text-black mt-4 ">Resources</h1>
             <div className="d-flex flex-column gap-2 ">
               <p className="mb-0">FAQ</p>
               <p className="mb-0"> Careers</p>
@@ -128,7 +124,7 @@ export default function ProductFooter() {
             </div>
           </div>
           <div class="col-12 col-sm-2 col-md-3 ">
-            <h1 className="fw-bold fs-6 text-black mb-0">Partner</h1>
+            <h1 className="fw-bold fs-6 text-black mt-4 ">Partner</h1>
             <div className="d-flex flex-column gap-2 ">
               <p className="mb-0">Become Seller</p>
             </div>

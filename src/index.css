@@ -89,6 +89,13 @@
   color: #fbae24 !important;
 }
 
+.textprimary {
+  color: #fbae24 !important;
+}
+.borderprimary {
+  border: 1px solid #fbae24 !important;
+}
+
 @media (max-width: 576px) {
   .prd-top {
     margin-top: 28%;

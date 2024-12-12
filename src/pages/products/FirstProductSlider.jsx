@@ -9,7 +9,10 @@ import { Rate } from 'antd';
 import { IoCartOutline } from 'react-icons/io5';
 import ProductCardImageSlider from './ProductCardImageSlider';
 import './products.css';
+import { useNavigate } from 'react-router-dom';
 export default function FirstProductSlider({ productArray }) {
+  const navigate = useNavigate();
+
   return (
     <div className="rounded-xl p-2 mt-4" style={{ backgroundColor: '#EBEEF6' }}>
       <Swiper
@@ -48,7 +51,10 @@ export default function FirstProductSlider({ productArray }) {
         {productArray.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="card rounded-xl overflow-hidden">
-              <div className="position-relative overflow-hidden">
+              <div
+                className="position-relative overflow-hidden custom-pointer"
+                onClick={() => navigate(`/productdetails/`)}
+              >
                 <ProductCardImageSlider images={item.images} />
                 <div className="position-absolute top-0 w-full">
                   <div className="d-flex justify-content-between align-items-center">
@@ -105,7 +111,7 @@ export default function FirstProductSlider({ productArray }) {
                   </div>
                   <div className="ml-2">({item.rating})</div>
                 </div>
-                <div className="d-flex gap-3">
+                <div className="d-flex gap-3 align-items-center">
                   <p className="mb-0 mt-4 fw-700 " style={{ fontSize: '20px' }}>
                     {' '}
                     $ 2967

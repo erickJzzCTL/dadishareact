@@ -6,6 +6,7 @@ import { Accordion } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './category.css';
 import ProductCardImageSlider from '../../products/ProductCardImageSlider';
+import { useNavigate } from 'react-router-dom';
 
 const CategoryArray = [
   {
@@ -92,6 +93,8 @@ const productArray = [
 ];
 
 export default function FilterSection() {
+  const navigate = useNavigate();
+
   return (
     <div className="row mt-4 mb-4">
       <div className="col-12 col-md-3">
@@ -237,7 +240,10 @@ export default function FilterSection() {
                 className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
               >
                 <div className="card rounded-xl overflow-hidden">
-                  <div className="position-relative overflow-hidden">
+                  <div
+                    className="position-relative overflow-hidden"
+                    onClick={() => navigate(`/productdetails/`)}
+                  >
                     <ProductCardImageSlider images={item.images} />
                     <div className="position-absolute top-0 w-full">
                       <div className="d-flex justify-content-between align-items-center">

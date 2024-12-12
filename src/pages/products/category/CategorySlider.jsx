@@ -85,7 +85,7 @@ const CategorySlider = () => {
         // </Spin>
         <div></div>
       ) : (
-        <div class="d-flex pt-2 pb-2 overflow-scroll scrollbar-none">
+        <div class="d-flex pt-5 pb-5 overflow-scroll scrollbar-none">
           {categories.map(item => {
             return (
               <div className="d-flex flex-column" key={item.id}>
